@@ -312,7 +312,7 @@ int main() {
       //after the fork loop, because no exec function, you have to delete it 
       delete_process(argv_arr, redi_arr, redirect_arr, cmd_vct);
       waitpid(-1, NULL, 0);
-      sleep(1);
+      //sleep(1);
       return 0;
     }
     
@@ -397,7 +397,7 @@ int fork_loop(int *pid, int pipe_fd[][2], char*** argv_arr, char*** argk_arr) {
       }
     }
     // sleep(1);
-    // waitpid(pid[i], &status, WNOHANG);
+    waitpid(pid[i], NULL, 0);
     //fflush(stdout);
   }
   return 0;
