@@ -27,7 +27,7 @@ public:
 
 TreeNode* build_tree(vector<int>& myvec);
 TreeNode* search_position(TreeNode*& root, int value);
-void delete_tree(TreeNode* root);
+TreeNode* delete_tree(TreeNode* root);
 void preorder_traverse(TreeNode* root);
 void inorder_traverse(TreeNode* root);
 void postorder_traverse(TreeNode* root);

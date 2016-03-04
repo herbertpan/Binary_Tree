@@ -115,20 +115,22 @@ bool TreeNode::search(int value){
 	return false;
 }
 
-void delete_tree(TreeNode* root) {
-	if (!root) return;
+TreeNode* delete_tree(TreeNode* root) {
+  //only if root is NULL at the very beginning
+  if (!root) return nullptr;
 	//a leaf node
 	if (!root->left && !root->right) {
 		delete root;
-		return;
+		return nullptr;
 	}
 	if (root->left) {
-		delete_tree(root->left);
-		root->left = nullptr;
+		root->left = delete_tree(root->left);
+		//root->left = nullptr;
 	}
 	if (root->right) {
-		delete_tree(root->right);
-		root->right = nullptr;
+		root->right = delete_tree(root->right);
+		//root->right = nullptr;
 	}
 	delete root;
+        return nullptr;
 } 

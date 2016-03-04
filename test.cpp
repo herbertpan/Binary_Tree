@@ -3,7 +3,7 @@
 //#include <crtdbg.h>
 #include <iostream>
 #include <vector>
-#include "vld.h"
+//#include "vld.h"
 #include "bst.h"
 
 using namespace std;
@@ -38,7 +38,7 @@ int main(int argc, char * argv[]) {
 	cout << root->search(17) << endl;
 	cout << root->search(19) << endl;
 	cout << root->search(14) << endl;
-	//delete_tree(root);
+	delete_tree(root);
 	root = nullptr;
 	//root = new TreeNode(13);
 	preorder_traverse(root); cout << endl;
