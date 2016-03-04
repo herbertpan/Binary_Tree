@@ -7,7 +7,7 @@
 using namespace std;
 
 //used during building a BST
-TreeNode * search_position(TreeNode* & root, int value) {
+TreeNode * search_position(TreeNode*&  root, int value) {
 	if (!root) {
 		root = new TreeNode(value);
 		return root;
@@ -19,6 +19,7 @@ TreeNode * search_position(TreeNode* & root, int value) {
 	if (root->val < value) {
 		return search_position(root->right, value);
 	}
+	return root;
 }	
 
 TreeNode * build_tree(vector<int>& myvec) {
@@ -97,3 +98,37 @@ void TreeNode::insert(int value) {
 	TreeNode* node = this;
 	search_position(node, value);
 }
+
+bool TreeNode::search(int value){
+	if (!this) return false;
+	if (value == this->val) {
+		return true;
+	}
+	else if (value > this->val) {
+		TreeNode* node = this->right;
+		return node->search(value);
+	}
+	else {
+		TreeNode* node = this->left;
+		return node->search(value);
+	}
+	return false;
+}
+
+void delete_tree(TreeNode* root) {
+	if (!root) return;
+	//a leaf node
+	if (!root->left && !root->right) {
+		delete root;
+		return;
+	}
+	if (root->left) {
+		delete_tree(root->left);
+		root->left = nullptr;
+	}
+	if (root->right) {
+		delete_tree(root->right);
+		root->right = nullptr;
+	}
+	delete root;
+} 
