@@ -20,9 +20,7 @@ public:
 		void destroy_tree();
 	};
 	
-
-
-
+	void insert(int value);
 }; 
 
 TreeNode* build_tree(vector<int>& myvec);

@@ -93,3 +93,7 @@ vector<vector<int>> levelorder_traverse(TreeNode* root) {
 	return ans;
 }
 
+void TreeNode::insert(int value) {
+	TreeNode* node = this;
+	search_position(node, value);
+}

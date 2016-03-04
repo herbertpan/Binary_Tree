@@ -18,6 +18,18 @@ int main(int argc, char * argv[]) {
 	cout << endl;
 	inorder_traverse(root); cout << endl;
 	preorder_traverse(root); cout << endl;
-	postorder_traverse(root);
+	postorder_traverse(root); cout << endl;
+	
+	root->insert(17);
+
+	vector<vector<int>> res = levelorder_traverse(root);
+	for (auto x : res) {
+		for (int y : x) {
+			cout << y << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+
 	getchar();
 }
