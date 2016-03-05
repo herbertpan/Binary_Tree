@@ -1,5 +1,6 @@
 #ifndef _bst_h_
 #define _bst_h_
+#include <cstdlib>
 #include <vector>
 using namespace std;
 //typedef class *BST TreeNode;
@@ -32,6 +33,5 @@ void preorder_traverse(TreeNode* root);
 void inorder_traverse(TreeNode* root);
 void postorder_traverse(TreeNode* root);
 vector<vector<int>> levelorder_traverse(TreeNode* root);
-
 
 #endif
